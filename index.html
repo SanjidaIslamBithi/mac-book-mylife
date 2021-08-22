@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind and fonts -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet" />
+    <!-- Custom styling -->
+    <style>
+        body {
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .selected {
+            border: 4px solid rgb(0, 0, 0);
+        }
+    </style>
+    <title>My Mac</title>
+</head>
+
+<body>
+    <section>
+        <!-- container for image n other half section -->
+        <div class="container mx-auto px-4 md:px-2">
+            <div class="grid grid-cols-1 md:grid md:grid-cols-2">
+                <!-- Image -->
+                <div class="p-5 border rounded border-gray-200 m-5">
+                    <div class="h-auto w-full">
+                        <img src="images/mac.png" id="art" class="w-full rounded h-full object-cover" alt="" />
+                    </div>
+                </div>
+                <!-- Options -->
+                <div class="mt-10 max-w-lg mx-auto">
+                    <span class="text-4xl text-gray-700 font-black">Customize your Blue 24-inch <br>
+                        iMac with Apple
+                        M1 chip.
+                    </span>
+                    <h2 class="text-lg text-gray-700 font-normal pt-10">Apple M1 chip with 8-core CPU with 4 performance
+                        cores and
+                        4 efficiency cores,7-core GPU, and 16-core Neural Engine 8GB unified memory 256GB
+                        SSD store Two thunderblot / USB 4 ports Magic Mouse keyboard- Us English</h2>
+                    <!-- start div for -buttons like memory, storage, delivary -->
+                    <div class="grid grid-flow-row auto-rows-max md:auto-rows-min">
+                        <!-- div-for-Memory button -->
+                        <div>
+                            <h2 class="text-2xl text-gray-900 text-opacity-100 font-black pt-10">Memory</h2>
+                            <div class="grid grid-cols-1 md:grid md:grid-cols-2 gap-3">
+                                <button id="btn-8GB" class="p-2
+                            border border-gray-600
+                            shadow
+                            hover:shadow-2xl
+                            rounded">8GB unified memory
+
+                                </button>
+                                <button id="btn-16GB" class="p-2
+                            border border-gray-600
+                            shadow
+                            hover:shadow-2xl
+                            rounded">16GB unified memory
+                                </button>
+                            </div>
+                        </div>
+                        <!-- div-for-Storage button -->
+                        <div>
+                            <h2 class="text-2xl text-gray-900 text-opacity-100 font-black pt-10">Storage</h2>
+                            <div class="grid grid-cols-1 md:grid md:grid-cols-3 gap-3"> <button id="btn-256GB" class="p-2
+                            border border-gray-600
+                            shadow
+                            hover:shadow-2xl
+                            rounded">256GB SSD storage
+                                </button>
+                                <button id="btn-512GB" class="p-2
+                            border border-gray-600
+                            shadow
+                            hover:shadow-2xl
+                            rounded"> 512GB SSD storage
+
+                                </button>
+                                <button id="btn-1TB" class="p-2
+                            border border-gray-600
+                            shadow
+                            hover:shadow-2xl
+                            rounded">1TB SSD storage
+                                </button>
+                            </div>
+                        </div>
+                        <!-- div-for-delivary button -->
+                        <div>
+                            <h2 class="text-2xl text-gray-900 text-opacity-100 font-black pt-10">Choose your delivery
+                                option
+                            </h2>
+                            <div class="grid grid-cols-1 md:grid md:grid-cols-2 gap-3">
+                                <button id="btn-OntimeD" class="p-2
+                                border border-gray-600
+                                shadow
+                                hover:shadow-2xl
+                                rounded">Friday, Aug 25 Free Prime Delivery
+
+
+                                </button>
+                                <button id="btn-fastD" class="p-2
+                                border border-gray-600
+                                shadow
+                                hover:shadow-2xl
+                                rounded">Friday, Aug 21 Delivery charge $20
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- end of div for buttons -->
+                    <!-- div for calculation table -->
+                    <div class="pt-10">
+                        <table class="table-fixed">
+
+                            <tbody>
+                                <tr class="text-2xl text-gray-900 text-opacity-100 font-black pt-10">
+                                    <td>Best Price:</td>
+                                    <td>$<span id="bestPrice">1299</span></td>
+
+                                </tr>
+                                <tr class="text-2xl text-gray-900 text-opacity-100 font-black pt-10">
+                                    <td>Extra Memory Cost:
+                                    </td>
+                                    <td>$<span id="memoryCost">0</span></td>
+
+                                </tr>
+                                <tr class="text-2xl text-gray-900 text-opacity-100 font-black pt-10">
+                                    <td>Extra storage
+                                        cost:</td>
+                                    <td>$<span id="StorageCost">0</span></td>
+
+                                </tr>
+                                <tr
+                                    class="text-2xl text-gray-900 text-opacity-100 font-black pt-10 border-b-4 border-black">
+                                    <td>Delivery Charge:
+                                    </td>
+                                    <td>$<span id="DelivaryCost">0</span></td>
+
+                                </tr>
+                                <!-- <hr class="border-b-4"> -->
+
+
+                                <tr class="text-2xl text-gray-900 text-opacity-100 font-black pt-10">
+                                    <td>Total Price:</td>
+                                    <td>$<span id="total">1299</span></td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                    <!-- end of table calculation -->
+                    <!-- copon code section start -->
+                    <p class="text-xl text-gray-900 text-opacity-100 font-black pt-10 border-b-2">Add Promo Code</p>
+                    <input class="border-double p-3 border-2 border-black shadow hover:shadow-lg rounded
+                            " type="text" placeholder="code" id="promo">
+                    <button class="border-double p-3 border-2 border-black shadow hover:shadow-lg rounded
+                    bg-red-500 hover:bg-red-700
+                            " id="apply-button" onclick="discount()">Apply</button>
+                    <hr>
+
+                    <!-- copon code section start -->
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- section end for above -->
+
+    <section>
+        <div>
+            <!-- for total price in last -->
+            <h1 class="text-2xl text-gray-900 text-opacity-100 font-black pt-10 text-center">Total:$<span
+                    id="final-total">1299</span></h1>
+        </div>
+    </section>
+
+
+    <!-- Custom js -->
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
